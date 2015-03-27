@@ -26,7 +26,7 @@ class Library_Data_Version
     protected static $_file = 'latest';
 
     # Google Code latest version data file
-    protected static $_latest = 'http://phpmemcacheadmin.googlecode.com/files/latest';
+    protected static $_latest = '';
 
     # Time between HTTP check
     protected static $_time = 1296000; # 15 days
