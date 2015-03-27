@@ -41,20 +41,17 @@ class Library_Command_Factory
             {
                 case 'Memcache':
                     # PECL Memcache API
-                    require_once 'Memcache.php';
                     self::$_object['Memcache'] = new Library_Command_Memcache();
                     break;
 
                 case 'Memcached':
                     # PECL Memcached API
-                    require_once 'Memcached.php';
                     self::$_object['Memcached'] = new Library_Command_Memcached();
                     break;
 
                 case 'Server':
                 default:
                     # Server API (eg communicating directly with the memcache server)
-                    require_once 'Server.php';
                     self::$_object['Server'] = new Library_Command_Server();
                     break;
             }
@@ -65,7 +62,7 @@ class Library_Command_Factory
     /**
      * Accessor to command class instance by type
      *
-     * @param String $command Type of command
+     * @param String $api Type of command
      *
      * @return void
      */
@@ -79,20 +76,17 @@ class Library_Command_Factory
             {
                 case 'Memcache':
                     # PECL Memcache API
-                    require_once 'Memcache.php';
                     self::$_object['Memcache'] = new Library_Command_Memcache();
                     break;
 
                 case 'Memcached':
                     # PECL Memcached API
-                    require_once 'Memcached.php';
                     self::$_object['Memcached'] = new Library_Command_Memcached();
                     break;
 
                 case 'Server':
                 default:
                     # Server API (eg communicating directly with the memcache server)
-                    require_once 'Server.php';
                     self::$_object['Server'] = new Library_Command_Server();
                     break;
             }
