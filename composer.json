@@ -1,0 +1,23 @@
+{
+    "name": "cfoellmann/phpmemcacheadmin",
+    "type": "application",
+    "description": "Graphic stand-alone administration for memcached to monitor and debug purpose",
+    "keywords": ["phpmemcacheadmin","memcache","memcached","web"],
+    "homepage": "https://github.com/cfoellmann/phpmemcacheadmin",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Cyrille Mahieux",
+            "email": "elijaa@free.fr",
+            "homepage": "http://blog.elijaa.org/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/cfoellmann/phpmemcacheadmin/issues",
+        "wiki": "https://github.com/cfoellmann/phpmemcacheadmin/wiki",
+        "source": "https://github.com/cfoellmann/phpmemcacheadmin"
+    },
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
