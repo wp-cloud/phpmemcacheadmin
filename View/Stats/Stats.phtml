@@ -527,10 +527,10 @@ elseif((isset($_GET['server'])) && ($cluster = $_ini->cluster($_GET['server'])))
                         type: 'column',
                         name: 'Cache Size',
                         data: [{name: 'Hits',
-                                <?php echo $stats['get_hits_percent'] = ' - ' ? '' : 'y: ' . $stats['get_hits_percent'] . ','; ?>
+                                y: <?php if (' - ' == $stats['get_hits_percent']) { echo '0'; } else { echo $stats['get_hits_percent']; } ?>,
                                 color: '#2A707B'},
-                                {name: 'Misses',
-                                <?php echo $stats['get_misses_percent'] = ' - ' ? '' : 'y: ' . $stats['get_misses_percent'] . ','; ?>
+                               {name: 'Misses',
+                                y: <?php if (' - ' == $stats['get_misses_percent']) { echo '0'; } else { echo $stats['get_misses_percent']; } ?>,
                                 color: '#B5463F'}]
                     }]
                 });
