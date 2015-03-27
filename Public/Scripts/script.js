@@ -1,4 +1,5 @@
-// phpMemcachedAdmin script.js
+/* phpMemcachedAdmin script.js */
+/* global Highcharts: true, timeout: true */
 Highcharts.setOptions({
     chart: {
         style: {
