@@ -53,7 +53,10 @@ class Library_Data_Version
         }
         else
         {
-            # Getting last version from Google Code
+            # Getting last version
+			/**
+			 * @todo Get latest tag/release via GitHub API
+			 */
             if($latest = @file_get_contents(self::$_latest))
             {
                 # Saving latest version in file
