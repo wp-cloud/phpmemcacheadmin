@@ -1,3 +1,4 @@
+// phpMemcachedAdmin script.js
 Highcharts.setOptions({
     chart: {
         style: {

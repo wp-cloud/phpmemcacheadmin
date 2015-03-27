@@ -1,6 +1,14 @@
 <?php
 /**
- * Copyright 2010 Cyrille Mahieux
+ * @author    Cyrille Mahieux <elijaa(at)free.fr>
+ * @copyright Copyright (c) 2010-2015, Cyrille Mahieux
+ * @license   http://www.apache.org/licenses/LICENSE-2.0 Apache-2.0
+ * @package   phpMemcachedAdmin
+ * @version   1.3.0
+ *
+ *
+ * Copyright 2010-2015 Cyrille Mahieux
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,10 +22,11 @@
  * under the License.
  *
  * ><)))°> ><)))°> ><)))°> ><)))°> ><)))°> ><)))°> ><)))°> ><)))°> ><)))°>
- *
+ */
+
+/**
  * Stats viewing
  *
- * @author c.mahieux@of2m.fr
  * @since 20/03/2010
  */
 # Headers

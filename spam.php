@@ -1,4 +1,10 @@
 <?php
+/**
+ * @author    Cyrille Mahieux <elijaa(at)free.fr>
+ * @copyright Copyright (c) 2010-2015, Cyrille Mahieux
+ * @license   http://www.apache.org/licenses/LICENSE-2.0 Apache-2.0
+ * @package   phpMemcachedAdmin
+ */
 while(true)
 {
     $handle = fsockopen('127.0.0.1', 11211, $errno, $errstr, 2);
