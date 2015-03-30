@@ -1,9 +1,9 @@
 {
-    "name": "cfoellmann/phpmemcacheadmin",
+    "name": "wp-cloud/phpmemcacheadmin",
     "type": "application",
     "description": "Graphic stand-alone administration for memcached to monitor and debug purpose",
     "keywords": ["phpmemcacheadmin","memcache","memcached","web"],
-    "homepage": "https://github.com/cfoellmann/phpmemcacheadmin",
+    "homepage": "https://github.com/wp-cloud/phpmemcacheadmin",
     "license": "GPL-2.0+",
     "authors": [
         {
@@ -13,9 +13,9 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/cfoellmann/phpmemcacheadmin/issues",
-        "wiki": "https://github.com/cfoellmann/phpmemcacheadmin/wiki",
-        "source": "https://github.com/cfoellmann/phpmemcacheadmin"
+        "issues": "https://github.com/wp-cloud/phpmemcacheadmin/issues",
+        "wiki": "https://github.com/wp-cloud/phpmemcacheadmin/wiki",
+        "source": "https://github.com/wp-cloud/phpmemcacheadmin"
     },
     "require": {
         "php": ">=5.3.0"
