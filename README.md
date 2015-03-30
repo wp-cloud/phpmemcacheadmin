@@ -3,6 +3,9 @@
 
 [![Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
+## Libraries
+- [Chart.js](https://github.com/nnnick/Chart.js) 1.x
+
 ## License: _[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)_
 
     phpMemcachedAdmin
