@@ -1,4 +1,6 @@
 # phpMemcachedAdmin
+> Graphic stand-alone administration for memcached to monitor and debug purpose
+
 [![Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ## License: _[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)_
