@@ -37,8 +37,7 @@ foreach ($columns as $column)
     } ?>
 
     <div class="full-size padding">
-        <br/>
-        <span class="live">Actually looking at <?php echo Library_HTML_Components::clusterSelect('cluster_select', (isset($_GET['cluster'])) ? $_GET['cluster'] : '', 'live', 'onchange="changeCluster(this);"'); ?> stats</span>
+        <p class="live">Actually looking at <?php echo Library_HTML_Components::clusterSelect('cluster_select', (isset($_GET['cluster'])) ? $_GET['cluster'] : '', 'live', 'onchange="changeCluster(this);"'); ?> stats</p>
         <select class="right live" id="cluster_select" class="live" style="width:120px;">
             <option value="console">Console Mode</option>
             <option value="graphic" selected="selected">Graphic Mode</option>

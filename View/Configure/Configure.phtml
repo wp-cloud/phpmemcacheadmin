@@ -5,13 +5,9 @@
         <div class="container corner padding" style="padding-right:14px;">
             <form method="post" action="configure.php?request_write=commands">
             <div class="line">
-                Memcached commands API used by phpMemcacheAdmin<br/>
-                <a class="green" href="http://pecl.php.net/package/memcache">PECL Memcache</a> was
-                <?php echo (class_exists('Memcache', false)) ? '' : ' not '; ?> found on this server
-                <br/>
-                <a class="green" href="http://pecl.php.net/package/memcached">PECL Memcached</a> was
-                <?php echo (class_exists('Memcached', false)) ? '' : ' not '; ?> found on this server
-                <br/>
+                <p>Memcached commands API used by phpMemcacheAdmin</p>
+                <p><a class="green" href="http://pecl.php.net/package/memcache">PECL Memcache</a> was <?php echo (class_exists('Memcache', false)) ? '' : ' not '; ?> found on this server</p>
+                <p><a class="green" href="http://pecl.php.net/package/memcached">PECL Memcached</a> was <?php echo (class_exists('Memcached', false)) ? '' : ' not '; ?> found on this server</p>
                 <hr/>
             </div>
             <div class="line">
@@ -53,7 +49,7 @@
         <div class="container corner padding" style="padding-right:14px;">
             <form method="post" action="configure.php?request_write=live_stats">
             <div class="line">
-                Alert &amp; refresh rate for Live Stats<br/>
+                Alert &amp; refresh rate for Live Stats
                 <hr/>
             </div>
             <div class="line">
@@ -87,7 +83,7 @@
         <div class="container corner padding" style="padding-right:14px;">
             <form method="post" action="configure.php?request_write=miscellaneous">
             <div class="line">
-                Server connection timeout &amp; miscellaneous<br/>
+                Server connection timeout &amp; miscellaneous
                 <hr/>
             </div>
             <div class="line">
@@ -111,8 +107,8 @@
         <div class="container corner padding" style="padding-right:14px;">
             <form method="post" action="configure.php?request_write=servers">
             <div class="line">
-                Servers list used by phpMemcacheAdmin<br/><br/>
-                The server name will be filled by default with hostname:port
+                <p>Servers list used by phpMemcacheAdmin</p>
+                <p>The server name will be filled by default with hostname:port</p>
             </div>
             <div id="server_form">
 <?php
@@ -173,7 +169,6 @@
                     <a class="list" style="padding:1px 2px;-moz-border-radius:3px;-webkit-border-radius:3px;" href="#"
                        onclick="deleteServerOrCluster('cluster_<?php echo $cluster_id; ?>')">Delete Cluster</a>
                 </div>
-                <br/>
             </div>
 <?php       } ?>
             </div>

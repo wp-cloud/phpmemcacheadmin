@@ -16,12 +16,9 @@ if((isset($stats)) && (($stats === false) || ($stats == array())))
         } ?>
     </div>
     <div class="container corner full-size padding">
-        <span class="left">Error message</span>
-        <br/>
-        <?php echo Library_Data_Error::last(); ?>
-        <br/>
-        <br/>
-        Please check above error message, your <a href="configure.php" class="green">configuration</a> or your server status and retry
+        <p class="left">Error message</p>
+        <p><?php echo Library_Data_Error::last(); ?></p>
+        <p>Please check above error message, your <a href="configure.php" class="green">configuration</a> or your server status and retry</p>
     </div>
 <?php
 }
@@ -30,12 +27,11 @@ elseif((isset($slabs)) && ($slabs === false))
 {
 ?>
     <div class="header corner full-size padding" style="margin-top:10px;text-align:center;">
-        No slabs used in this server !
+        <p>No slabs used in this server!</p>
     </div>
     <div class="container corner full-size padding">
-        <span class="left">Error message</span>
-        <br/>
-        Maybe this server is not used, check your <a href="configure.php" class="green">configuration</a> or your server status and retry
+        <p class="left">Error message</p>
+        <p>Maybe this server is not used, check your <a href="configure.php" class="green">configuration</a> or your server status and retry</p>
     </div>
 <?php
 }
@@ -44,15 +40,12 @@ elseif((isset($items)) && ($items === false))
 {
 ?>
     <div class="header corner full-size padding" style="margin-top:10px;text-align:center;">
-        No item in this slab !
+        <p>No item in this slab!</p>
     </div>
     <div class="container corner full-size padding">
-        <span class="left">Error message</span>
-        <br/>
-        This slab is allocated, but is empty
-        <br/>
-        <br/>
-        Go back to <a href="?server=<?php echo $_GET['server']; ?>&amp;show=slabs" class="green">Server Slabs</a>
+        <p class="left">Error message</p>
+        <p>This slab is allocated, but is empty</p>
+        <p>Go back to <a href="?server=<?php echo filter_input(INPUT_GET, 'server'); ?>&amp;show=slabs" class="green">Server Slabs</a></p>
     </div>
 <?php
 }
