@@ -377,64 +377,115 @@ elseif((isset($_GET['server'])) && ($cluster = $_ini->cluster($_GET['server'])))
 
         <div class="sub-header corner padding">Cache Size <span class="green">Graphic</span></div>
         <div class="container corner padding">
-        <div id="cacheUsageContainer"></div>
+			<canvas id="cacheUsageContainer" width="275" height="275"></canvas>
             <script>
-                new Highcharts.Chart({
-                    chart: {
-                        backgroundColor: '#EBEBEB',
-                        plotBorderWidth: null,
-                        plotShadow: false,
-                        width: 274,
-                        height: 234,
-                        marginLeft: 0,
-                        marginRight: 0,
-                        marginTop: 0,
-                        marginBottom: 0,
-                        renderTo: 'cacheUsageContainer'
-                    },
-                    title: {
-                        text: '<b><?php echo Library_Data_Analysis::byteResize($stats['limit_maxbytes']); ?>Bytes</b>',
-                        y: 110,
-                        style: {
-                            fontSize: '12px'
-                        }
-                    },
-                    tooltip: {
-                    	enabled: false
-                    },
-                    plotOptions: {
-                        pie: {
-                        	borderWidth: 0,
-                            allowPointSelect: false,
-                            dataLabels: {
-                                enabled: true,
-                                color: '#000000',
-                                distance: 15,
-                                connectorWidth: 1.5,
-                                format: '<b>{point.name}</b> : {point.percentage:.1f} %'
-                            },
-                            center: ['50%', '50%']
-                        }
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    series: [{
-                        type: 'pie',
-                        name: 'Cache Size',
-                        size: '70%',
-                        innerSize: '55%',
-                        data: [{name: 'Wasted',
-                                y: <?php echo $wasted_percent; ?>,
-                                color: '#B5463F'},
-                               {name: 'Used',
-                                y: <?php echo $used_percent; ?>,
-                                color: '#2A707B'},
-                               {name: 'Free',
-                                y: <?php echo $free_percent; ?>,
-                                color: '#FFFFFF'}]
-                    }]
-                });
+				var usage = document.getElementById("cacheUsageContainer").getContext("2d");
+//				var cacheUsageContainer = new Chart(usage).Doughnut(data);
+				var data = [
+					{
+						value: <?php echo $wasted_percent; ?>, // 300,
+						color:"#B5463F",
+						highlight: "#FF5A5E",
+						label: "Wasted"
+					},
+					{
+						value: <?php echo $used_percent; ?>, // 50,
+						color: "#2A707B",
+						highlight: "#5AD3D1",
+						label: "Used"
+					},
+					{
+						value: <?php echo $free_percent; ?>, // 100,
+						color: "#FFFFFF",
+						highlight: "#FFC870",
+						label: "Free"
+					}
+				];
+				var cacheUsageContainer = new Chart(usage).Doughnut(data, {
+					//Boolean - Whether we should show a stroke on each segment
+					segmentShowStroke : true,
+
+					//String - The colour of each segment stroke
+					segmentStrokeColor : "#fff",
+
+					//Number - The width of each segment stroke
+					segmentStrokeWidth : 2,
+
+					//Number - The percentage of the chart that we cut out of the middle
+					percentageInnerCutout : 80, // This is 0 for Pie charts
+
+					//Number - Amount of animation steps
+					animationSteps : 100,
+
+					//String - Animation easing effect
+					animationEasing : "easeOutBounce",
+
+					//Boolean - Whether we animate the rotation of the Doughnut
+					animateRotate : true,
+
+					//Boolean - Whether we animate scaling the Doughnut from the centre
+					animateScale : false,
+
+					//String - A legend template
+					legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+				});
+
+//                new Highcharts.Chart({
+//                    chart: {
+//                        backgroundColor: '#EBEBEB',
+//                        plotBorderWidth: null,
+//                        plotShadow: false,
+//                        width: 274,
+//                        height: 234,
+//                        marginLeft: 0,
+//                        marginRight: 0,
+//                        marginTop: 0,
+//                        marginBottom: 0,
+//                        renderTo: 'cacheUsageContainer'
+//                    },
+//                    title: {
+//                        text: '<b><?php echo Library_Data_Analysis::byteResize($stats['limit_maxbytes']); ?>Bytes</b>',
+//                        y: 110,
+//                        style: {
+//                            fontSize: '12px'
+//                        }
+//                    },
+//                    tooltip: {
+//                    	enabled: false
+//                    },
+//                    plotOptions: {
+//                        pie: {
+//                        	borderWidth: 0,
+//                            allowPointSelect: false,
+//                            dataLabels: {
+//                                enabled: true,
+//                                color: '#000000',
+//                                distance: 15,
+//                                connectorWidth: 1.5,
+//                                format: '<b>{point.name}</b> : {point.percentage:.1f} %'
+//                            },
+//                            center: ['50%', '50%']
+//                        }
+//                    },
+//                    credits: {
+//                        enabled: false
+//                    },
+//                    series: [{
+//                        type: 'pie',
+//                        name: 'Cache Size',
+//                        size: '70%',
+//                        innerSize: '55%',
+//                        data: [{name: 'Wasted',
+//                                y: <?php echo $wasted_percent; ?>,
+//                                color: '#B5463F'},
+//                               {name: 'Used',
+//                                y: <?php echo $used_percent; ?>,
+//                                color: '#2A707B'},
+//                               {name: 'Free',
+//                                y: <?php echo $free_percent; ?>,
+//                                color: '#FFFFFF'}]
+//                    }]
+//                });
             </script>
         </div>
 <?php
@@ -484,56 +535,117 @@ elseif((isset($_GET['server'])) && ($cluster = $_ini->cluster($_GET['server'])))
 
         <div class="sub-header corner padding">Hit &amp; Miss Rate <span class="green">Graphic</span></div>
         <div class="container corner padding">
-        <div id="hitsContainer"></div>
+			<canvas id="hitsContainer" width="275" height="275"></canvas>
             <script>
-                new Highcharts.Chart({
-                    chart: {
-                        backgroundColor: '#EBEBEB',
-                        width: 274,
-                        height: 147,
-                        marginLeft: 0,
-                        marginRight: 0,
-                        marginTop: 0,
-                        marginBottom: 20,
-                        renderTo: 'hitsContainer'
-                    },
-                    title: {
-                        text: null
-                    },
-                    tooltip: {
-                    	enabled: false
-                    },
-                    plotOptions: {
-                    	column: {
-                            dataLabels: {
-                                enabled: true,
-                                format: '<b>{y} %</b>'
-                            }
-                        }
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    xAxis: {
-                    	categories: ['Hits', 'Misses']
-                    },
-                    yAxis: {
-                    	gridLineWidth: 0
-                    },
-                    series: [{
-                        type: 'column',
-                        name: 'Cache Size',
-                        data: [{name: 'Hits',
-                                y: <?php if (' - ' == $stats['get_hits_percent']) { echo '0'; } else { echo $stats['get_hits_percent']; } ?>,
-                                color: '#2A707B'},
-                               {name: 'Misses',
-                                y: <?php if (' - ' == $stats['get_misses_percent']) { echo '0'; } else { echo $stats['get_misses_percent']; } ?>,
-                                color: '#B5463F'}]
-                    }]
-                });
+				var hits = document.getElementById("hitsContainer").getContext("2d");
+				var data = {
+					labels: ["Hit & Miss Rate"],
+					datasets: [
+						{
+							label: "Hits",
+							fillColor: "#2A707B",
+							strokeColor: "rgba(220,220,220,0.8)",
+							highlightFill: "rgba(220,220,220,0.75)",
+							highlightStroke: "rgba(220,220,220,1)",
+							data: [<?php if (' - ' == $stats['get_hits_percent']) { echo '0'; } else { echo $stats['get_hits_percent']; } ?>]
+						},
+						{
+							label: "Misses",
+							fillColor: "#B5463F",
+							strokeColor: "rgba(151,187,205,0.8)",
+							highlightFill: "rgba(151,187,205,0.75)",
+							highlightStroke: "rgba(151,187,205,1)",
+							data: [<?php if (' - ' == $stats['get_misses_percent']) { echo '0'; } else { echo $stats['get_misses_percent']; } ?>]
+						}
+					]
+				};
+
+				var hitsContainer = new Chart(hits).Bar(data, {
+					//Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+					scaleBeginAtZero : true,
+
+					//Boolean - Whether grid lines are shown across the chart
+					scaleShowGridLines : true,
+
+					//String - Colour of the grid lines
+					scaleGridLineColor : "rgba(0,0,0,.05)",
+
+					//Number - Width of the grid lines
+					scaleGridLineWidth : 1,
+
+					//Boolean - Whether to show horizontal lines (except X axis)
+					scaleShowHorizontalLines: true,
+
+					//Boolean - Whether to show vertical lines (except Y axis)
+					scaleShowVerticalLines: true,
+
+					//Boolean - If there is a stroke on each bar
+					barShowStroke : true,
+
+					//Number - Pixel width of the bar stroke
+					barStrokeWidth : 2,
+
+					//Number - Spacing between each of the X value sets
+					barValueSpacing : 5,
+
+					//Number - Spacing between data sets within X values
+					barDatasetSpacing : 1,
+
+					//String - A legend template
+					legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+				});
+
+//				var myBarChart = new Chart(ctx).Bar(data, options);
+
+//                new Highcharts.Chart({
+//                    chart: {
+//                        backgroundColor: '#EBEBEB',
+//                        width: 274,
+//                        height: 147,
+//                        marginLeft: 0,
+//                        marginRight: 0,
+//                        marginTop: 0,
+//                        marginBottom: 20,
+//                        renderTo: 'hitsContainer'
+//                    },
+//                    title: {
+//                        text: null
+//                    },
+//                    tooltip: {
+//                    	enabled: false
+//                    },
+//                    plotOptions: {
+//                    	column: {
+//                            dataLabels: {
+//                                enabled: true,
+//                                format: '<b>{y} %</b>'
+//                            }
+//                        }
+//                    },
+//                    credits: {
+//                        enabled: false
+//                    },
+//                    legend: {
+//                        enabled: false
+//                    },
+//                    xAxis: {
+//                    	categories: ['Hits', 'Misses']
+//                    },
+//                    yAxis: {
+//                    	gridLineWidth: 0
+//                    },
+//                    series: [{
+//                        type: 'column',
+//                        name: 'Cache Size',
+//                        data: [{name: 'Hits',
+//                                y: <?php if (' - ' == $stats['get_hits_percent']) { echo '0'; } else { echo $stats['get_hits_percent']; } ?>,
+//                                color: '#2A707B'},
+//                               {name: 'Misses',
+//                                y: <?php if (' - ' == $stats['get_misses_percent']) { echo '0'; } else { echo $stats['get_misses_percent']; } ?>,
+//                                color: '#B5463F'}]
+//                    }]
+//                });
             </script>
         </div>
 
