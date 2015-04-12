@@ -6,7 +6,8 @@
 ## License: _[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)_
 
     phpMemcachedAdmin
-    Copyright 2010-2015 Cyrille Mahieux
+    Copyright (C) 2010-2015 Cyrille Mahieux
+    Copyright (C) 2015 WP-Cloud
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
