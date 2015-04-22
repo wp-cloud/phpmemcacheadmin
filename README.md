@@ -3,6 +3,7 @@
 
 [![Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Packagist](https://img.shields.io/packagist/v/wp-cloud/phpmemcacheadmin.svg)](https://packagist.org/packages/wp-cloud/phpmemcacheadmin)
+[![GitHub tag](https://img.shields.io/github/tag/wp-cloud/phpmemcacheadmin.svg)](https://github.com/wp-cloud/phpmemcacheadmin/releases)
 
 ## License: _[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)_
 
