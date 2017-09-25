@@ -1,14 +1,14 @@
 <?php
 /**
- * @author    Cyrille Mahieux <elijaa(at)free.fr>
- * @copyright Copyright (c) 2010-2015, Cyrille Mahieux
+ * @author    WP-Cloud <code@wp-cloud.de>
+ * @copyright Copyright (c) 2015-2017 WP-Cloud
  * @license   http://www.apache.org/licenses/LICENSE-2.0 Apache-2.0
  * @package   phpMemcachedAdmin
- * @version   1.3.0
+ * @version   1.3.0-dev
  *
  *
  * Copyright 2010-2015 Cyrille Mahieux
- * Copyright 2015 WP-Cloud
+ * Copyright 2015-2017 WP-Cloud
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

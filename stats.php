@@ -1,7 +1,7 @@
 <?php
 /**
- * @author    Cyrille Mahieux <elijaa(at)free.fr>
- * @copyright Copyright (c) 2010-2015, Cyrille Mahieux
+ * @author    WP-Cloud <code@wp-cloud.de>
+ * @copyright Copyright (c) 2015-2017 WP-Cloud
  * @license   http://www.apache.org/licenses/LICENSE-2.0 Apache-2.0
  * @package   phpMemcachedAdmin
  */
